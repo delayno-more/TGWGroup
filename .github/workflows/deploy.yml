@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: 设置 Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
           node-version: 18
           cache: 'npm'
@@ -30,7 +30,7 @@ jobs:
         run: npm run build   # 执行 vite build，生成 dist 文件夹
 
       - name: 上传构建产物
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist       # 将 dist 目录作为 Pages 的静态文件
 
